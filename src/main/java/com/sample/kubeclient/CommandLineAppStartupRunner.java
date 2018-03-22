@@ -50,8 +50,8 @@ public class CommandLineAppStartupRunner implements CommandLineRunner {
             client.serviceAccounts().inNamespace("perfchecker").createOrReplace(fabric8);
 
             List<Deployment> deployments = new ArrayList<Deployment>();
-            Integer dataSourceId = 165;
-            Integer tenantId = 615;
+            Integer firstId = 111;
+            Integer secondId = 123;
             for(int i=0;i<numberOfContainers;i++) {
                 String name = "perfchecker" + i;
                 Deployment deployment = new DeploymentBuilder()
@@ -68,7 +68,7 @@ public class CommandLineAppStartupRunner implements CommandLineRunner {
                         .addNewContainer()
                         .withName(name)
                         .withImage(image)
-                        .withArgs(new String[]{"5000", "50", String.valueOf(dataSourceId), String.valueOf(tenantId), String.valueOf(runTime)})
+                        .withArgs(new String[]{"5000", "50", String.valueOf(firstId), String.valueOf(secondId), String.valueOf(runTime)})
                         .endContainer()
                         .endSpec()
                         .endTemplate()
