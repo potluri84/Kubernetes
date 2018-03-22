@@ -5,6 +5,6 @@ metadata:
   namespace: kube-system
 data:
   stubDomains: |
-    {"hdfnode2.spartan.tmwsystems.com": ["192.168.80.7"]}
+    {"servername": ["ipaddress"]}
   upstreamNameservers: |
     ["8.8.8.8", "8.8.4.4"]
