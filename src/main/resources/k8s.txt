@@ -1,0 +1,8 @@
+az provider register -n Microsoft.ContainerService
+az group create --name clekubernetes --location eastus
+az aks create --resource-group clekubernetes --name clekubernetescluster --node-count 1 --generate-ssh-keys
+az aks get-credentials --resource-group clekubernetes --name clekubernetescluster
+
+docker run perfchecker:latest 5 5 166 615 1
+
+ kubeadm join --token d93879.7c4e463aeda36e0e 10.5.0.4:6443 --discovery-token-ca-cert-hash sha256:e6582596a8eef9bf883e42dcb24392c92e161e88d3a62eebf695a330bcbaac38

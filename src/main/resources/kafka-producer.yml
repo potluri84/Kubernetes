@@ -1,0 +1,12 @@
+version: "1"
+  perftester1:
+    image: 10.60.3.102:5000/perfchecker
+    container_name: perftester1
+    args: 
+      strings: "5","5","165","615","1"
+  
+  perftester2:
+    image: 10.60.3.102:5000/perfchecker
+    container_name: perftester2
+    args: 
+      strings: "5","5","165","615","1"
